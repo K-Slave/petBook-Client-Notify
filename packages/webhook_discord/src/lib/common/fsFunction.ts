@@ -12,8 +12,8 @@ export const setLocalData = (data: Array<object>) => {
 
   let logData: any[] = [];
 
-  if (data && data.length > 300) {
-    logData = [...data.reverse().slice(0, data.length - 299)].reverse();
+  if (data && data.length > 250) {
+    logData = [...data.reverse().slice(0, data.length - 249)].reverse();
   } else {
     logData = data;
   }
