@@ -39,8 +39,9 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+build/
 public/
-public/
+public/*
 public
 .public
 ./public
