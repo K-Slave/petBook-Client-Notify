@@ -28,7 +28,7 @@ dotenv.config();
 // Create a new client instance
 
 const env = envSelector("develop");
-// const productEnv = envSelector("product");
+const productEnv = envSelector("product");
 
 export interface PetBotClient extends Client {
   commands?: any;
@@ -71,7 +71,7 @@ client.on(Events.ClientReady, (petBotClient) => {
     .fetch(env.channelId)
     .then(async (textChannel) => {
       const hook = await client
-        .fetchWebhook(env.webhookId, env.webhookToken)
+        .fetchWebhook(productEnv.webhookId, productEnv.webhookToken)
         .catch((e) => {
           console.error(e);
 

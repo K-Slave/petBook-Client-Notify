@@ -39,6 +39,7 @@ dotenv.config();
 // define 항목 에서 다른 의도에 대해 자세히 읽을 수 있습니다.
 // Create a new client instance
 const env = (0, envSelector_1.default)("develop");
+const productEnv = (0, envSelector_1.default)("product");
 const client = new discord_js_1.Client({
     intents: [
         discord_js_1.GatewayIntentBits.Guilds,
@@ -68,7 +69,7 @@ client.on(discord_js_1.Events.ClientReady, (petBotClient) => {
         .fetch(env.channelId)
         .then(async (textChannel) => {
         const hook = await client
-            .fetchWebhook(env.webhookId, env.webhookToken)
+            .fetchWebhook(productEnv.webhookId, productEnv.webhookToken)
             .catch((e) => {
             console.error(e);
             webhookClient.send(Object.assign(Object.assign({}, exports.botProfile), { content: `대상 채널에 webhook이 없거나 env 파일이 빠져있을수 있음` }));
