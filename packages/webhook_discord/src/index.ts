@@ -17,7 +17,10 @@ import {
 } from "./lib/modules/embedParser";
 import envSelector from "./lib/modules/envSelector";
 import createEmbed from "./lib/templates/createEmbed";
+import express from "express";
+import path from "path";
 
+const app = express();
 // import commandListner from "./listener/dist/commandListner";
 
 dotenv.config();
@@ -263,3 +266,15 @@ client.on(Events.ClientReady, (petBotClient) => {
 client.login(process.env.DISCORD_TOKEN);
 
 // commandListner(client);
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+app.get(`/getNotifyLog/${process.env.LOG_KEY}/logdata.json`, (req, res) => {
+  res.sendFile(path.join(__dirname + "/../logData.json"));
+});
+
+app.listen("1009", () => {
+  console.log(process.env.LOG_KEY);
+  console.log("ready to logData.json response");
+});
