@@ -270,7 +270,7 @@ client.login(process.env.DISCORD_TOKEN);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get(`/getNotifyLog/${process.env.LOG_KEY}/logdata.json`, (req, res) => {
+app.get(`${process.env.LOG_KEY}`, (req, res) => {
   res.sendFile(path.join(__dirname + "/../logData.json"));
 });
 
