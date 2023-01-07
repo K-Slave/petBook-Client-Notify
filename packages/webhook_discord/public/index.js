@@ -93,11 +93,16 @@ client.on(discord_js_1.Events.ClientReady, (petBotClient) => {
                     webhookClient.send(Object.assign(Object.assign({}, exports.botProfile), { content: "개발용 채널에 인식된 webhook 없음" }));
                     return;
                 }
-                hook.send({
-                    username: "petBot",
-                    avatarURL: "https://cdn.discordapp.com/app-icons/1044621624864940163/87fe18353f90a7a4c275be945afc14e5.png?size=512",
-                    embeds: logedEmbeds,
-                });
+                try {
+                    hook.send({
+                        username: "petBot",
+                        avatarURL: "https://cdn.discordapp.com/app-icons/1044621624864940163/87fe18353f90a7a4c275be945afc14e5.png?size=512",
+                        embeds: logedEmbeds,
+                    });
+                }
+                catch (err) {
+                    webhookClient.send(Object.assign(Object.assign({}, exports.botProfile), { content: "logedEmbeds 가 비어있는 컨텐츠임" }));
+                }
             }
             // CI 가 끝났음을 알리는, 워크플로우가 걸린 시간을 측정해서
             // 펫북 채널로 재전송 하는 부분
@@ -119,11 +124,16 @@ client.on(discord_js_1.Events.ClientReady, (petBotClient) => {
                     webhookClient.send(Object.assign(Object.assign({}, exports.botProfile), { content: "개발용 채널에 인식된 webhook 없음" }));
                     return;
                 }
-                hook.send({
-                    username: "petBot",
-                    avatarURL: "https://cdn.discordapp.com/app-icons/1044621624864940163/87fe18353f90a7a4c275be945afc14e5.png?size=512",
-                    embeds: logedEmbeds,
-                });
+                try {
+                    hook.send({
+                        username: "petBot",
+                        avatarURL: "https://cdn.discordapp.com/app-icons/1044621624864940163/87fe18353f90a7a4c275be945afc14e5.png?size=512",
+                        embeds: logedEmbeds,
+                    });
+                }
+                catch (err) {
+                    webhookClient.send(Object.assign(Object.assign({}, exports.botProfile), { content: "logedEmbeds 가 비어있는 컨텐츠임" }));
+                }
             }
             if (msgCreateEvent.author.username === "petBot" &&
                 msgCreateEvent.content.includes("빌드중...")) {
@@ -132,11 +142,16 @@ client.on(discord_js_1.Events.ClientReady, (petBotClient) => {
                     webhookClient.send(Object.assign(Object.assign({}, exports.botProfile), { content: "개발용 채널에 인식된 webhook 없음" }));
                     return;
                 }
-                hook.send({
-                    username: "petBot",
-                    avatarURL: "https://cdn.discordapp.com/app-icons/1044621624864940163/87fe18353f90a7a4c275be945afc14e5.png?size=512",
-                    embeds: logedEmbeds,
-                });
+                try {
+                    hook.send({
+                        username: "petBot",
+                        avatarURL: "https://cdn.discordapp.com/app-icons/1044621624864940163/87fe18353f90a7a4c275be945afc14e5.png?size=512",
+                        embeds: logedEmbeds,
+                    });
+                }
+                catch (err) {
+                    webhookClient.send(Object.assign(Object.assign({}, exports.botProfile), { content: "logedEmbeds 가 비어있는 컨텐츠임" }));
+                }
             }
             if (msgCreateEvent.author.username === "petBot" &&
                 msgCreateEvent.content.includes("빌드 성공")) {
@@ -146,12 +161,17 @@ client.on(discord_js_1.Events.ClientReady, (petBotClient) => {
                     return;
                 }
                 const attachment = [...msgCreateEvent.attachments][0];
-                hook.send({
-                    username: "petBot",
-                    avatarURL: "https://cdn.discordapp.com/app-icons/1044621624864940163/87fe18353f90a7a4c275be945afc14e5.png?size=512",
-                    embeds: [...logedEmbeds],
-                    files: [attachment[1]],
-                });
+                try {
+                    hook.send({
+                        username: "petBot",
+                        avatarURL: "https://cdn.discordapp.com/app-icons/1044621624864940163/87fe18353f90a7a4c275be945afc14e5.png?size=512",
+                        embeds: [...logedEmbeds],
+                        files: [attachment[1]],
+                    });
+                }
+                catch (err) {
+                    webhookClient.send(Object.assign(Object.assign({}, exports.botProfile), { content: "logedEmbeds 가 비어있는 컨텐츠임" }));
+                }
             }
         });
     })

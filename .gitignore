@@ -40,6 +40,10 @@ build/Release
 node_modules/
 jspm_packages/
 public/
+public/
+public
+.public
+./public
 
 # TypeScript v1 declaration files
 typings/
