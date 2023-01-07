@@ -42,7 +42,7 @@ export const getPushCommitMsg = (logData: Message[]) => {
   return lastFePush;
 };
 
-export const getPRCommitMsg = (logData: Message[]) => {
+export const getPRCommitMsg = (logData: Message[], authorName?: string) => {
   const lastPR = logData.find((log) => {
     const embedsLog = log.embeds[0];
     const authorLog = log.author;
@@ -50,7 +50,9 @@ export const getPRCommitMsg = (logData: Message[]) => {
     if (
       authorLog &&
       authorLog.username === "GitHub" &&
-      embedsLog.title?.includes("[K-Slave/petBook-Client] Pull request")
+      !embedsLog.title?.includes("petBook-Client:fe") &&
+      embedsLog.author?.name === authorName &&
+      embedsLog.title?.includes("petBook-Client")
     ) {
       return true;
     }

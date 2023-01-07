@@ -70,8 +70,10 @@ export const CIResultEmbed = (
     let lastMsg: Message<boolean> | undefined = undefined;
 
     if (kind === "PR") {
-      lastMsg = getPRCommitMsg(logData);
+      lastMsg = getPRCommitMsg(logData, CIEmbed.author?.name);
     }
+
+    console.log(lastMsg, "lastMsg");
 
     if (kind === "PUSH") {
       lastMsg = getPushCommitMsg(logData);

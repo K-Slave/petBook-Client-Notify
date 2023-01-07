@@ -5,6 +5,7 @@
     "preinstall": "pnpm dlx only-allow pnpm",
     "start:webhook_discord": "pnpm --filter @yoon0cean/webhook_discord",
     "deploy:webhook_discord": "pnpm --filter @yoon0cean/webhook_discord",
+    "build:webhook_discord": "pnpm --filter @yoon0cean/webhook_discord build",
     "build-watch:webhook_discord": "pnpm --filter @yoon0cean/webhook_discord build:watch",
     "start-forever:webhook_discord": "pnpm --filter @yoon0cean/webhook_discord start:forever"
   },
