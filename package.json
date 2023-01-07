@@ -1,0 +1,26 @@
+{
+  "name": "@yoon0cean/functions",
+  "private": true,
+  "scripts": {
+    "preinstall": "pnpm dlx only-allow pnpm",
+    "start:webhook_discord": "pnpm --filter @yoon0cean/webhook_discord",
+    "deploy:webhook_discord": "pnpm --filter @yoon0cean/webhook_discord"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": "16",
+    "pnpm": ">=7.9.0"
+  },
+  "packageManager": "pnpm@7.9.0",
+  "devDependencies": {
+    "pnpm": "^7.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steven-yn/webhook_discord_to_firebase.git"
+  },
+  "author": "steven",
+  "license": "MIT"
+}
