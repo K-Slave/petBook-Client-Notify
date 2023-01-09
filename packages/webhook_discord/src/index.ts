@@ -32,6 +32,7 @@ dotenv.config();
 
 const env = envSelector("develop");
 const productEnv = envSelector("product");
+const randomKey = Math.random().toFixed(10);
 
 export interface PetBotClient extends Client {
   commands?: any;
@@ -52,7 +53,7 @@ const onLineEmbed = createEmbed({
   title: "봇이 활성화 되었어요",
   avatarURL:
     "https://cdn.discordapp.com/app-icons/1044621624864940163/87fe18353f90a7a4c275be945afc14e5.png?size=512",
-  description: "야옹",
+  description: `야옹\n로그키 : ${randomKey}`,
 });
 
 const webhookClient = new WebhookClient({
@@ -270,7 +271,7 @@ client.login(process.env.DISCORD_TOKEN);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get(`${process.env.LOG_KEY}`, (req, res) => {
+app.get(`${process.env.LOG_KEY}/${randomKey}/logData.json`, (req, res) => {
   res.sendFile(path.join(__dirname + "/../logData.json"));
 });
 
