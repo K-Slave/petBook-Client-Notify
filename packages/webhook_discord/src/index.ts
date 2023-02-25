@@ -19,6 +19,7 @@ import envSelector from "./lib/modules/envSelector";
 import createEmbed from "./lib/templates/createEmbed";
 import express from "express";
 import path from "path";
+// import hospitalDataFixer from "./lib/modules/jsonParser";
 
 const app = express();
 // import commandListner from "./listener/dist/commandListner";
@@ -70,6 +71,8 @@ export const waitPreArray: Embed[] = [];
 
 client.on(Events.ClientReady, (petBotClient) => {
   console.log(`Ready! Logged in as ${petBotClient.user.tag}`);
+
+  // hospitalDataFixer();
 
   petBotClient.channels
     .fetch(env.channelId)
