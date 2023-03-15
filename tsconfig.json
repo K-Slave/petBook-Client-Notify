@@ -3,7 +3,7 @@
     "module": "commonjs",
     "target": "es2017",
     "moduleResolution": "node",
-    "outDir": "public",
+    "outDir": "build",
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
