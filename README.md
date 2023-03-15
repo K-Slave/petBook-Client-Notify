@@ -191,3 +191,5 @@
 2. 한번씩 메모리 관리차원에서 재시동 할수있게
 
 프로세스 포트 조회 sudo lsof -PiTCP -sTCP:LISTEN
+
+//

@@ -278,7 +278,7 @@ app.get(`${process.env.LOG_KEY}/${randomKey}/logData.json`, (req, res) => {
   res.sendFile(path.join(__dirname + "/../logData.json"));
 });
 
-app.listen("1009", () => {
+app.listen("6000", () => {
   console.log(process.env.LOG_KEY);
   console.log("ready to logData.json response");
 });
