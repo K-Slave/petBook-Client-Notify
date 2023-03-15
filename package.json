@@ -1,8 +1,8 @@
 {
   "name": "@yoon0cean/webhook_discord",
   "scripts": {
-    "start": "sudo ts-node src/index.ts",
-    "start:forever": "sudo forever public/index.js",
+    "start": "ts-node src/index.ts",
+    "start:forever": "forever public/index.js",
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
     "build:watch": "tsc --watch"
