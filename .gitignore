@@ -107,6 +107,7 @@ dist
 # TernJS port file
 .tern-port
 
+logData.json
 backUp.json
 hospitalData_latest.json
 hospitalData_230225.json
