@@ -3,34 +3,34 @@ exports.getVercelUpdated = exports.getPRCommitMsg = exports.getPushCommitMsg = e
 // 둘중 마지막 메시지를 리턴함
 // find 메서드 자체가 하나 찾으면 바로 리턴
 const getLastCommitMsg = (logData) => {
-    const lastFePush = logData.find((log) => {
+    const lastDevPush = logData.find((log) => {
         var _a, _b;
         const embedsLog = log.embeds[0];
         const authorLog = log.author;
         if (authorLog &&
             authorLog.username === "GitHub" &&
-            (((_a = embedsLog.title) === null || _a === void 0 ? void 0 : _a.includes("petBook-Client:fe")) ||
+            (((_a = embedsLog.title) === null || _a === void 0 ? void 0 : _a.includes("petBook-Client:dev")) ||
                 ((_b = embedsLog.title) === null || _b === void 0 ? void 0 : _b.includes("[K-Slave/petBook-Client] Pull request")))) {
             return true;
         }
         return false;
     });
-    return lastFePush;
+    return lastDevPush;
 };
 exports.getLastCommitMsg = getLastCommitMsg;
 const getPushCommitMsg = (logData) => {
-    const lastFePush = logData.find((log) => {
+    const lastDevPush = logData.find((log) => {
         var _a;
         const embedsLog = log.embeds[0];
         const authorLog = log.author;
         if (authorLog &&
             authorLog.username === "GitHub" &&
-            ((_a = embedsLog.title) === null || _a === void 0 ? void 0 : _a.includes("petBook-Client:fe"))) {
+            ((_a = embedsLog.title) === null || _a === void 0 ? void 0 : _a.includes("petBook-Client:dev"))) {
             return true;
         }
         return false;
     });
-    return lastFePush;
+    return lastDevPush;
 };
 exports.getPushCommitMsg = getPushCommitMsg;
 const getPRCommitMsg = (logData, authorName) => {
@@ -40,7 +40,7 @@ const getPRCommitMsg = (logData, authorName) => {
         const authorLog = log.author;
         if (authorLog &&
             authorLog.username === "GitHub" &&
-            !((_a = embedsLog.title) === null || _a === void 0 ? void 0 : _a.includes("petBook-Client:fe")) &&
+            !((_a = embedsLog.title) === null || _a === void 0 ? void 0 : _a.includes("petBook-Client:dev")) &&
             ((_b = embedsLog.author) === null || _b === void 0 ? void 0 : _b.name) === authorName &&
             ((_c = embedsLog.title) === null || _c === void 0 ? void 0 : _c.includes("petBook-Client"))) {
             return true;

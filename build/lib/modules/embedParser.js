@@ -99,18 +99,6 @@ const buildStartEmbed = (msgEvt, webhookClient) => {
                 parsedArr.push(buildEmbed);
             }
         }
-        // if (
-        //   lastUpdateMessage &&
-        //   lastUpdateMessage.embeds &&
-        //   lastUpdateMessage.embeds.length > 0
-        // ) {
-        //   const foundEmbeds = lastUpdateMessage.embeds.find((embed: Embed) =>
-        //     embed.title?.includes("petBook-Client:fe")
-        //   );
-        //   if (foundEmbeds) {
-        //     parsedArr.push(foundEmbeds);
-        //   }
-        // }
     }
     catch (error) {
         if (webhookClient) {

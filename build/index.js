@@ -92,7 +92,7 @@ client.on(discord_js_1.Events.ClientReady, (petBotClient) => {
             // 펫북 채널로 재전송하는 부분
             if (msgCreateEvent.author.username === "GitHub" &&
                 msgCreateEvent.embeds &&
-                (((_a = msgCreateEvent.embeds[0].title) === null || _a === void 0 ? void 0 : _a.includes("petBook-Client:fe")) ||
+                (((_a = msgCreateEvent.embeds[0].title) === null || _a === void 0 ? void 0 : _a.includes("petBook-Client:dev")) ||
                     ((_b = msgCreateEvent.embeds[0].title) === null || _b === void 0 ? void 0 : _b.includes("[K-Slave/petBook-Client] Pull request")))) {
                 const logedEmbeds = (0, embedParser_1.githubEventTimeStamped)(msgCreateEvent, webhookClient);
                 if (!hook) {
