@@ -110,7 +110,7 @@ client.on(Events.ClientReady, (petBotClient) => {
         if (
           msgCreateEvent.author.username === "GitHub" &&
           msgCreateEvent.embeds &&
-          (msgCreateEvent.embeds[0].title?.includes("petBook-Client:fe") ||
+          (msgCreateEvent.embeds[0].title?.includes("petBook-Client:dev") ||
             msgCreateEvent.embeds[0].title?.includes(
               "[K-Slave/petBook-Client] Pull request"
             ))
