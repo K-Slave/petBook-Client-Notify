@@ -1,5 +1,7 @@
 # petBook-Client-Notify
 
+- yarn 으로 패키지 매니저 교체 (04.11)
+
 ### 실행 방법
 
 0. node.js > 16 버전과 pnpm 패키지 매니저, .env 파일, 기존 logData.json 파일이 필요합니다
